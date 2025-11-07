@@ -23,11 +23,13 @@ app.use(morgan("dev"))
 
 // ROOT ROUTES //
 app.get("/", (req, res) => {
-  res.send("hello there")
+  res.render("mainPage.ejs")
 })
 // REQUIRE ROUTES //
+const router = require("./routes/auth")
 
 // USE ROUTES //
+app.use("/auth", router)
 
 // LISTEN SERVER //
 app.listen(3000, () => {
