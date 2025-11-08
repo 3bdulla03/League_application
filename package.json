@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/3bdulla03/League_application#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "method-override": "^3.0.0",
     "mongoose": "^8.19.3",
     "morgan": "^1.10.1"
