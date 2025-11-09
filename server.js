@@ -14,13 +14,12 @@ const mongoose = require("./config/database")
 //REQUIRE MIDDLEWARE //
 const methodOverride = require("method-override")
 const morgan = require("morgan")
-// const passUserToView = require('./middlewares/passUserToView')
+const passUserToView = require("./middlewares/passUserToView")
 
 // USE MIDDLEWARE //
 app.use(express.urlencoded())
 app.use(methodOverride("_method"))
 app.use(morgan("dev"))
-// app.use(passUserToView)
 
 // SESSION CONFIG //
 app.use(
@@ -30,6 +29,8 @@ app.use(
     saveUninitialized: true,
   })
 )
+
+app.use(passUserToView)
 
 // ROOT ROUTES //
 app.get("/", (req, res) => {

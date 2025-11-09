@@ -50,5 +50,5 @@ exports.auth_signIn_post = async (req, res) => {
 
 exports.auth_signOut_get = async (req, res) => {
   req.session.destroy()
-  res.render("mainPage.ejs")
+  res.redirect("/")
 }
