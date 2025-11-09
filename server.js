@@ -39,12 +39,12 @@ app.get("/", (req, res) => {
 })
 // REQUIRE ROUTES //
 const router = require("./routes/auth")
-const leagueRouter = require('./routes/league.js')
+const leagueRouter = require("./routes/league.js")
 
 // USE ROUTES //
 app.use("/auth", router)
 
-app.use("/league",isSignedIn, leagueRouter)
+app.use("/league", isSignedIn, leagueRouter)
 
 // LISTEN SERVER //
 app.listen(3000, () => {
