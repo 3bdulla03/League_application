@@ -45,10 +45,11 @@ exports.auth_signIn_post = async (req, res) => {
     username: user.username,
     _id: user._id,
   }
-  res.render("auth/index.ejs") // It should render to next page(maybe leagues page)
+  console.log(user)
+  res.redirect("/auth") // It should render to next page(maybe leagues page)
 }
 
 exports.auth_signOut_get = async (req, res) => {
   req.session.destroy()
-  res.redirect("/")
+  res.render("mainPage.ejs")
 }

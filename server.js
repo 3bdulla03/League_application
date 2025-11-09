@@ -15,6 +15,7 @@ const mongoose = require("./config/database")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const passUserToView = require("./middlewares/passUserToView")
+// const isSignedIn = require("./middlewares/isSignedIn")
 
 // USE MIDDLEWARE //
 app.use(express.urlencoded())

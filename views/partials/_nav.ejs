@@ -1,5 +1,10 @@
 <nav>
+  <% if(user){ %>
+ <h3>Welcome <%= user.username %> </h3>
+ <br><a href="/auth/sign-out">Sign Out</a></br>
+
+ <% } else { %>
 <a href="/auth/sign-up">Sign Up</a></br>
 <br><a href="/auth/sign-in">Sign In</a></br>
-<br><a href="/auth/sign-out">Sign Out</a></br>
+<% } %>
 </nav>
