@@ -15,7 +15,7 @@ const mongoose = require("./config/database")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const passUserToView = require("./middlewares/passUserToView")
-// const isSignedIn = require("./middlewares/isSignedIn")
+const isSignedIn = require("./middlewares/isSignedIn")
 
 // USE MIDDLEWARE //
 app.use(express.urlencoded())
@@ -39,9 +39,12 @@ app.get("/", (req, res) => {
 })
 // REQUIRE ROUTES //
 const router = require("./routes/auth")
+const leagueRouter = require('./routes/league.js')
 
 // USE ROUTES //
 app.use("/auth", router)
+
+app.use("/league",isSignedIn, leagueRouter)
 
 // LISTEN SERVER //
 app.listen(3000, () => {
