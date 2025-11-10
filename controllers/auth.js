@@ -54,15 +54,3 @@ exports.auth_signOut_get = async (req, res) => {
   res.render("mainPage.ejs")
 }
 
-exports.auth_profile_get = async (req, res) => {
-  res.render("auth/profile.ejs")
-}
-
-exports.auth_profile_edit_get = async (req, res) => {
-  res.render("auth/edit.ejs")
-}
-
-exports.auth_profile_edit_put = async (req, res) => {
-  // await User.findByIdAndUpdate(user._id, req.body)
-  res.redirect("/auth/profile")
-}
