@@ -17,10 +17,15 @@ const morgan = require("morgan")
 const passUserToView = require("./middlewares/passUserToView")
 const isSignedIn = require("./middlewares/isSignedIn")
 
+const path = require('path');
+
 // USE MIDDLEWARE //
 app.use(express.urlencoded())
 app.use(methodOverride("_method"))
 app.use(morgan("dev"))
+
+// STYLE
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SESSION CONFIG //
 app.use(

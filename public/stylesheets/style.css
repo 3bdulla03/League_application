@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Tourney:ital,wght@0,900;1,900&display=swap');
+
+body {
+  font-family: "Momo Trust Display", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #222831;
+  color: white;
+}
+
+.landing-header {
+  display: flex;
+  flex-direction: row;
+  height: 15%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 20px 35px;
+}
+
+.logo-container > h1 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.ball-icon {
+  background-image: url('https://i.postimg.cc/k57sRTcb/soccer-ball.png');
+  width: 1.4em;
+  height: 1.4em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 2px;
+  padding-left: 5px;
+}
+
+.landing-image {
+  background-image: url('https://wallpapers.com/wallpapers/soccer-4k-tgtgynl9gj4a3qzd.html');
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 0 0 -8px;
+}
+
+.auth-links,
+.nav-links {
+  margin: 25px 20px;
+}
+
+.auth-links > a {
+  color: #00ADB5;
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0 10px;
+  background-color: #393E46;
+}
+
+
+.auth-links > a:first-child:hover {
+  background-color: black;
+  color: white;
+}
+
+.auth-links > a:nth-child(2):hover {
+  background-color: black;
+  color: white;
+}
+
+.nav-links > a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-links > a:hover {
+  color: #6f8dae;
+  text-decoration: underline;
+}
+
+.header-bar {
+    background-color: white;
+    color: black;
+}
+
+.signup-page,
+.signin-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+
+.signup-form-container-1,
+.signin-form-container-1 {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-container-2,
+.signin-form-container-2 {
+  padding: 10px 30px 20px;
+}
+
+.signup-form-container-2 > h1,
+.signin-form-container-2 > h1 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.signup-form-container-2 > form,
+.signin-form-container-2 > form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+input {
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 15em;
+  padding: 5px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #393E46;
+  padding: 7px 15px;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.signup-img {
+  background-image: url('https://c0.wallpaperflare.com/preview/675/788/891/orange-and-black-soccer-ball-on-the-field.jpg');
+  min-height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  position: relative;
+  z-index: -10;
+}
+
+.signin-img {
+  background-image: url('https://c1.wallpaperflare.com/preview/1017/370/429/football-ball-goal-sport.jpg');
+  min-height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40%;
+  position: relative;
+  z-index: -10;
+  left: -10px;
+}
