@@ -39,10 +39,12 @@ app.get("/", (req, res) => {
 })
 // REQUIRE ROUTES //
 const router = require("./routes/auth")
+const routerProfile = require("./routes/routerProfile")
 const leagueRouter = require("./routes/league.js")
 
 // USE ROUTES //
 app.use("/auth", router)
+app.use("/profile", isSignedIn, routerProfile)
 
 app.use("/league", isSignedIn, leagueRouter)
 
