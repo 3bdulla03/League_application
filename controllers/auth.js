@@ -45,10 +45,24 @@ exports.auth_signIn_post = async (req, res) => {
     username: user.username,
     _id: user._id,
   }
-  res.render("auth/index.ejs") // It should render to next page(maybe leagues page)
+
+  res.redirect("/auth") // It should render to next page(maybe leagues page)
 }
 
 exports.auth_signOut_get = async (req, res) => {
   req.session.destroy()
-  res.redirect("/")
+  res.render("mainPage.ejs")
+}
+
+exports.auth_profile_get = async (req, res) => {
+  res.render("auth/profile.ejs")
+}
+
+exports.auth_profile_edit_get = async (req, res) => {
+  res.render("auth/edit.ejs")
+}
+
+exports.auth_profile_edit_put = async (req, res) => {
+  // await User.findByIdAndUpdate(user._id, req.body)
+  res.redirect("/auth/profile")
 }
