@@ -1,5 +1,27 @@
 <nav>
-<a href="/auth/sign-up">Sign Up</a></br>
-<br><a href="/auth/sign-in">Sign In</a></br>
-<br><a href="/auth/sign-out">Sign Out</a></br>
+  <% if(user) { %>
+  <div class="landing-header">
+    <div class="logo-container">
+      <div class="ball-icon"></div>
+      <h1>League</h1>
+    </div>
+    <div class="nav-links">
+      <a href="/users/profile">Profile</a>
+      <!-- <a href="/leagues">View all Leagues</a> -->
+      <a href="/auth/sign-out">Sign Out</a>
+    </div>
+  </div>
+
+  <% } else { %>
+  <div class="landing-header">
+    <div class="logo-container">
+      <div class="ball-icon"></div>
+      <h1>League</h1>
+    </div>
+    <div class="auth-links">
+      <a href="/auth/sign-up">Sign Up</a>
+      <a href="/auth/sign-in">Sign In</a>
+    </div>
+  </div>
+  <% } %>
 </nav>
