@@ -13,10 +13,10 @@ const leagueSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  // teams: {         //  Model still not created for Teams
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Team",
-  // },
+  team: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Team",
+  }],
 })
 
 const League = mongoose.model("League", leagueSchema)
