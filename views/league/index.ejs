@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
+    <title>Leagues</title>
   </head>
   <body>
-    <h1>League Management System</h1>
-    <p>Create an account to enjoy premium management features.</p>
     <%- include('../partials/_nav.ejs') %>
+    <h1>League Management System</h1>
+    <p>Leagues: </p>
+    <% league.forEach((league)=> { %>
+    <a href="/league/<%= league._id %>">
+      <h4><%= league.league %> League</h4>
+      <p>Managed by <%= league.manager.username %></p>
+    </a>
+    <% }) %>
+
+    <a href="/league/new">Add new League</a>
   </body>
 </html>
