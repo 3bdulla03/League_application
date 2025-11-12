@@ -11,7 +11,7 @@ const playerSchema = new mongoose.Schema({
     },
     position: {
         type: String,
-        required: true
+        enum:['Goalkeeper', 'Defender', 'Midfielder', 'Striker']
     },
     team: {
         type: mongoose.Schema.Types.ObjectId,
@@ -19,11 +19,13 @@ const playerSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
-    },
-    goals: {
-        type: Number,
         required: false
+    },
+    rating: {
+        type: Number,
+        required: false,
+        min: [0, 'Rating must be at least 0'],
+        max: [10, 'Rating cannot exceed 10']
     },
 })
 
