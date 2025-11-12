@@ -11,3 +11,4 @@ exports.profile_get = async (req, res) => {
 exports.profile_edit_get = async (req, res) => {
   res.render("auth/edit.ejs")
 }
+
