@@ -1,10 +1,6 @@
 const User = require("../models/user")
 const bcrypt = require("bcrypt")
 
-exports.auth_get = async (req, res) => {
-  res.render("auth/index.ejs")
-}
-
 exports.auth_signUp_get = async (req, res) => {
   res.render("auth/signUp.ejs")
 }
@@ -24,7 +20,7 @@ exports.auth_signUp_post = async (req, res) => {
 
   newUser = await User.create(req.body)
 
-  res.render("auth/index.ejs")
+  res.render("mainPage.ejs")
 }
 
 exports.auth_signIn_get = async (req, res) => {
