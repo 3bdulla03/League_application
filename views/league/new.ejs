@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>New league</title>
+  </head>
+  <body>
+    <%- include('../partials/_nav.ejs') %>
+    <div class="new-container">
+    <div class="new-form-container">
+      <h1>New League</h1>
+      <form action="/league" method="POST">
+        <label for="league-name">League Name: </label>
+        <input type="text" name="league" id="league-name" />
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" />
+        
+        <button type="submit">Add League</button>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
