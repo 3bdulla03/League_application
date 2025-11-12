@@ -8,4 +8,8 @@ router.get("/new", leagueCont.league_create_get)
 
 router.post("/", leagueCont.league_create_post)
 
+router.get("/:leagueId", leagueCont.league_show_get)
+
+router.delete("/:leagueId", leagueCont.league_delete_delete)
+
 module.exports = router

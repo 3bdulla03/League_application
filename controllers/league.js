@@ -15,3 +15,13 @@ exports.league_create_post = async (req, res) => {
     await League.create(req.body)
     res.redirect("/league")
 }
+
+exports.league_show_get = async (req, res) => {
+    const league = await League.findById(req.params.leagueId).populate('manager')
+    res.render("league/show.ejs", {league})
+}
+
+exports.league_delete_delete = async (req, res) => {
+    const league = await League.findByIdAndDelete(req.params.leagueId)
+    res.redirect("/league")
+}

@@ -1,0 +1,5 @@
+<h1><%= league.league %> has these teams: </h1>
+
+<form action="/league/<%= league._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete League</button>
+</form>
