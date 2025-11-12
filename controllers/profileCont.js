@@ -3,7 +3,9 @@ const bcrypt = require("bcrypt")
 //
 
 exports.profile_get = async (req, res) => {
-  res.render("auth/profile.ejs")
+  const newUser = await User.findById(req.session.user._id)
+
+  res.render("auth/profile.ejs", { user: newUser })
 }
 
 exports.profile_edit_get = async (req, res) => {
