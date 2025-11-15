@@ -47,11 +47,13 @@ const router = require("./routes/auth")
 const routerProfile = require("./routes/routerProfile")
 const leagueRouter = require("./routes/league.js")
 const teamRouter = require("./routes/team.js")
+const playerRouter = require('./routes/player')
 // USE ROUTES //
 app.use("/auth", router)
 app.use("/profile", isSignedIn, routerProfile)
 app.use("/Team", isSignedIn,teamRouter)
 app.use("/league", isSignedIn, leagueRouter)
+app.use('/players', isSignedIn, playerRouter)
 
 // LISTEN SERVER //
 app.listen(3000, () => {
