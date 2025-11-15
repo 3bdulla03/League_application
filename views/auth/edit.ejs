@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <form action="/profile/edit?_method=PUT" method="POST"           enctype="multipart/form-data">
     <h1>Update Profile</h1>
-    <form action="/auth/edit?_method=PUT" method="POST">
+    <!-- <br action="/profile/edit?_method=PUT" method="POST"           enctype="multipart/form-data"> -->
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required value="<%= user.username %>" /></br>
 
@@ -21,7 +21,9 @@
         name="confirmPassword"
         required
       /></br>
+              <br> <input type="file" name="avatar" id="avatar" /></br>
 
       </br><button type="submit">Submit</button>
+    </form>
   </body>
 </html>
