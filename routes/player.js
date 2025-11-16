@@ -10,7 +10,7 @@ router.get('/:playerId', playerCtrl.player_show_get)
 
 router.delete('/:playerId', playerCtrl.player_delete_destroy)
 
-//router.get
-//router.put
+router.get('/:playerId/edit',playerCtrl.player_show_edit)
+router.put('/:playerId', playerCtrl.player_update_put)
 
 module.exports = router

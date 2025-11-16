@@ -26,7 +26,7 @@ const playerSchema = new mongoose.Schema({
         required: false,
         min: [0, 'Rating must be at least 0'],
         max: [10, 'Rating cannot exceed 10']
-    },
+    }
 })
 
 const Player = mongoose.model("Player", playerSchema)

@@ -37,3 +37,13 @@ exports.player_delete_destroy = async (req,res)=>{
   const player = await Player.findByIdAndDelete(req.params.playerId)
   res.redirect('/players')
 }
+
+//edit
+exports.player_show_edit = async (req,res)=>{
+  const player = await Player.findById(req.params.playerId)
+  res.render('player/edit.ejs', {player})
+}
+exports.player_update_put = async (req,res)=>{
+  const player =await Player.findByIdAndUpdate(req.params.playerId, req.body)
+  res.redirect(`/players/${req.params.playerId}`)
+}
