@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit-Team</title>
+</head>
+<body>
+  <h1>editing-Team</h1>
+  <form action="/Team/<%= team._id %>?_method=PUT" method="POST">
+    <label for="name">Team-name:</label><br>
+    <input type="text" name="name" id="name" value="<%= team.name %>"><br>
+
+    <label for="coach_name">coach-name</label><br>
+    <input type="text" name="coach_name" id="coach_name" value="<%= team.coach_name %>"><br>
+
+    <button type="submit">edit</button>
+  </form>
+</body>
+</html>

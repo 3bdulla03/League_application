@@ -1,0 +1,8 @@
+<h1><%= league.league %> has these teams: </h1>
+<a href="/Team/new">new-Team</a>
+<% league.forEach((leagues)=>{ %>
+    <a href="Team/<%= leagues._id %>"><h4><%= leagues.league %></h4></a>
+    <% }) %>
+<form action="/league/<%= league._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete League</button>
+</form>
