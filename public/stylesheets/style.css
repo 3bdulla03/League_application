@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Tourney:ital,wght@0,900;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Tourney:ital,wght@0,900;1,900&display=swap");
 
 body {
   font-family: "Momo Trust Display", sans-serif;
@@ -31,7 +31,7 @@ body {
 }
 
 .ball-icon {
-  background-image: url('https://i.postimg.cc/k57sRTcb/soccer-ball.png');
+  background-image: url("https://i.postimg.cc/k57sRTcb/soccer-ball.png");
   width: 1.4em;
   height: 1.4em;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@ body {
 }
 
 .landing-image {
-  background-image: url('https://wallpapers.com/wallpapers/soccer-4k-tgtgynl9gj4a3qzd.html');
+  background-image: url("https://wallpapers.com/wallpapers/soccer-4k-tgtgynl9gj4a3qzd.html");
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,14 +54,13 @@ body {
 }
 
 .auth-links > a {
-  color: #00ADB5;
+  color: #00adb5;
   padding: 10px 25px;
   border-radius: 10px;
   text-decoration: none;
   margin: 0 10px;
-  background-color: #393E46;
+  background-color: #393e46;
 }
-
 
 .auth-links > a:first-child:hover {
   background-color: black;
@@ -86,8 +85,8 @@ body {
 }
 
 .header-bar {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .signup-page,
@@ -143,7 +142,7 @@ button {
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background-color: #393E46;
+  background-color: #393e46;
   padding: 7px 15px;
   margin: 10px 0;
 }
@@ -153,7 +152,7 @@ button:hover {
 }
 
 .signup-img {
-  background-image: url('https://c0.wallpaperflare.com/preview/675/788/891/orange-and-black-soccer-ball-on-the-field.jpg');
+  background-image: url("https://c0.wallpaperflare.com/preview/675/788/891/orange-and-black-soccer-ball-on-the-field.jpg");
   min-height: 110vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -163,7 +162,7 @@ button:hover {
 }
 
 .signin-img {
-  background-image: url('https://c1.wallpaperflare.com/preview/1017/370/429/football-ball-goal-sport.jpg');
+  background-image: url("https://c1.wallpaperflare.com/preview/1017/370/429/football-ball-goal-sport.jpg");
   min-height: 110vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,4 +170,105 @@ button:hover {
   position: relative;
   z-index: -10;
   left: -10px;
+}
+
+.separate-show {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.separate-show a {
+  margin-top: 45%;
+  color: #00adb5;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: #393e46;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.separate-show a:hover {
+  background-color: black;
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 60px;
+}
+
+.profile-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: 2em;
+  color: #00adb5;
+}
+
+h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  color: #eeeeee;
+}
+
+h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.3em;
+}
+
+.profile-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #393e46;
+  color: #00adb5;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.profile-info a:hover {
+  background-color: black;
+  color: white;
+}
+
+.profile-container img {
+  width: 35%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-left: 40px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px #00000070;
+}
+
+.home {
+  margin: 40px 60px;
+}
+
+.home a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #393e46;
+  color: #00adb5;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.home a:hover {
+  background-color: black;
+  color: white;
 }
