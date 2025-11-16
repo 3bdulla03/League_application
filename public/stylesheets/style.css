@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Tourney:ital,wght@0,900;1,900&display=swap");
 
+a{
+  color: chartreuse;
+}
 body {
   font-family: "Momo Trust Display", sans-serif;
   display: flex;
