@@ -1,4 +1,5 @@
 const Team = require("../models/team")
+const League = require("../models/league")
 
 //getting the team-index.ejs
 exports.team_index_get= async ( req , res )=>{
@@ -34,7 +35,7 @@ exports.team_edit_get= async ( req , res )=>{
 //updating the page
 exports.team_edit_put= async ( req , res )=>{
   await Team.findByIdAndUpdate( req.params.teamId , req.body ).populate("user")
-  res.redirect(`Team/${req.params.teamId}`)
+  res.redirect(`/Team/${req.params.teamId}`)
 }
 
 //deleting a Team

@@ -8,7 +8,7 @@ exports.league_index_get = async (req, res) => {
 exports.league_create_get = async (req, res) => {
     // const league = await League.find().populate('user')
     res.render("league/new.ejs")
-} 
+}
 
 exports.league_create_post = async (req, res) => {
     req.body.manager = req.session.user._id
