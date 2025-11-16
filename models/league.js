@@ -13,7 +13,7 @@ const leagueSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"
   },
-  team: [{
+  teams: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Team",
     required: false

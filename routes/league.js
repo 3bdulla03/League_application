@@ -32,7 +32,7 @@ router.put("/:leagueId/teams/:teamId",teamCtrl.team_edit_put)
 
 
 
-
+//player
 router.get('/:leagueId/teams/:teamId/players/new', playerCtrl.player_new_get)
 router.post('/:leagueId/teams/:teamId/players', playerCtrl.player_new_post)
 

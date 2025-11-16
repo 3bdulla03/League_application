@@ -5,7 +5,7 @@ const teamSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
-  coach_name:{
+  coach:{
     type:String,
     required:true,
   },
@@ -14,6 +14,6 @@ const teamSchema = new mongoose.Schema({
     ref: 'User'
     }
 })
-const team = mongoose.model('team',teamSchema)
-module.exports=team
+const Team = mongoose.model('Team',teamSchema)
+module.exports=Team
 
