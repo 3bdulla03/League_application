@@ -1,4 +1,6 @@
 const League = require("../models/league")
+const Team = require("../models/team")
+
 
 exports.league_index_get = async (req, res) => {
     const league = await League.find().populate('manager')
@@ -12,12 +14,13 @@ exports.league_create_get = async (req, res) => {
 
 exports.league_create_post = async (req, res) => {
     req.body.manager = req.session.user._id
+    req.body.team = 
     await League.create(req.body)
     res.redirect("/league")
 }
 
 exports.league_show_get = async (req, res) => {
-    const league = await League.findById(req.params.leagueId).populate('manager')
+    const league = await League.findById(req.params.leagueId).populate('team')
     res.render("league/show.ejs", {league})
 }
 
