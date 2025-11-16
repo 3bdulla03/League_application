@@ -1,14 +1,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="/stylesheets/style.css" />
 <body>
-  <div class="header-bar">
-    <%- include('../partials/_nav.ejs') %>
-  </div>
+  <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
   <div class="signup-page">
     <div class="signup-form-container-1">
       <div class="signup-form-container-2">
         <h1>Sign up</h1>
-        <form action="/auth/sign-up" method="POST">
+        <form
+          action="/auth/sign-up"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <label for="username">Username:</label>
           <input type="text" name="username" id="username" required />
           <label for="password">Password:</label>
@@ -20,6 +22,9 @@
             id="confirmPassword"
             required
           />
+
+          <input type="file" name="avatar" id="avatar" />
+
           <button type="submit">Sign up</button>
         </form>
       </div>

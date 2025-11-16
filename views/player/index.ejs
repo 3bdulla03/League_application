@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>All players</title>
+</head>
+<body>
+<h3>Players</h3>
+
+<table class="simple-table">
+  <!--row 1-->
+  <tr><th class="team-name" colspan="6">Team Name</th></tr>
+  <!--row 2-->
+  <tr>
+    <th>
+      Number
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Nationality
+    </th>
+    <th>
+      Position
+    </th>
+    <th>
+      Rating
+    </th>
+    <th>
+      Team
+    </th>
+  </tr>
+  <% players.forEach((player,index)=>{ %>
+    <tr onclick="window.location='/players/<%= player._id %>'">
+      <td><%= index %></td>
+      <td><%= player.name %></td>
+      <td><%= player.nationality %></td>
+      <td><%= player.position %></td>
+      <td><%= player.rating ? player.rating : '-'%></td>
+      <td><%= player.team ? player.team.name : "no team" %></td>
+    </tr>
+  <% }) %>
+</table>
+
+<a href="/players/new">Add a Player here</a>
+</body>
+</html>
