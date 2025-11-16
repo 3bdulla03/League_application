@@ -272,3 +272,41 @@ h4 {
   background-color: black;
   color: white;
 }
+
+
+/* Ali table Style *//* Ali table Style *//* Ali table Style *//* Ali table Style */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.simple-table {
+  color: #6f8dae;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.simple-table th,
+.simple-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.simple-table th {
+  background-color: #033f3a;
+  font-weight: bold;
+}
+
+.simple-table tr:nth-child(even) {
+  background-color: #033f3a;
+}
+
+.simple-table tr:hover {
+  background-color: #030ff3;
+}
+
+.simple-table .team-name {
+  text-align: center;
+  font-size: 20px;
+  padding: 12px;
+  background-color: #033f3a;
+  font-weight: bold;
+}

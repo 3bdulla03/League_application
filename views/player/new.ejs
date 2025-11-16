@@ -7,7 +7,7 @@
 </head>
 <body>
   <form action="/players" method="post">
-    
+
     <label for="name">Name:</label>
     <input type="text" name="name"id='name'>
 
@@ -15,14 +15,19 @@
     <input type="text" name="nationality"id='nationality'>
 
     <label for="position">Position:</label>
-    <input type="text" name="position"id='position'>
+    <select name="position" id="position">
+      <option value="Striker">Striker</option>
+      <option value="Midfielder">Midfielder</option>
+      <option value="Defender">Defender</option>
+      <option value="Goalkeeper">Goalkeeper</option>
+    </select>
 
     <label for="photo">Photo:</label>
     <input type="text" name="photo"id='photo'>
 
 
     <label for="rating">Rating:</label>
-    <input type="text" name="rating"id='rating'>
+    <input type="number" name="rating"id='rating' step="0.1" min="0" max="10">
 
     <input type="submit" value="Create Player">
   </form>
