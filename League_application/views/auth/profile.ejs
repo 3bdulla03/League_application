@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile-info">
+        <h1>Profile</h1>
+        <h3>User name :</h3>
+        <h4><%= user.username %></h4>
+
+      <br class="profile-links">
+        <a href="/profile/edit">Edit Profile</a> </br>
+      </div>
+
+      <img src="/upload/<%= user.avatar %>" width="50%" />
+
+    </div>
+    <div class="home">
+            <br><a href="/">Home Page</a></div>
+  </body>
+</html>

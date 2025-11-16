@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Document</title>
+</head>
+<body>
+<table class="simple-table">
+  <!--row 1-->
+  <tr><th class="team-name" colspan="4">Team Name: <%= player.team ? player.team.name : "no team" %></th></tr>
+  <!--row 2-->
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Nationality
+    </th>
+    <th>
+      Position
+    </th>
+    <th>
+      Rating
+    </th>
+  </tr>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.nationality %></td>
+      <td><%= player.position %></td>
+      <td><%= player.rating %></td>
+    </tr>
+</table>
+<a href="/players/<%= player._id %>/edit">Edit Player</a>
+<form action="/players/<%= player._id %>?_method=DELETE" method="POST"><button type="submit">Delete Player</button></form>
+</body>
+</html>
