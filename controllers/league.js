@@ -1,5 +1,6 @@
 const League = require("../models/league")
 
+
 exports.league_index_get = async (req, res) => {
     const league = await League.find().populate('manager')
     res.render("leagues/index.ejs", {league})
@@ -7,13 +8,8 @@ exports.league_index_get = async (req, res) => {
 
 exports.league_create_get = async (req, res) => {
     // const league = await League.find().populate('user')
-<<<<<<< HEAD
-    res.render("leagues/new.ejs")
-} 
-=======
     res.render("league/new.ejs")
 }
->>>>>>> main
 
 exports.league_create_post = async (req, res) => {
     req.body.manager = req.session.user._id
@@ -44,10 +40,5 @@ exports.league_update_put = async (req, res) => {
 
 exports.league_delete_delete = async (req, res) => {
     const league = await League.findByIdAndDelete(req.params.leagueId)
-<<<<<<< HEAD
-    res.redirect("/leagues")
-}
-=======
     res.redirect("/league")
 }
->>>>>>> main
