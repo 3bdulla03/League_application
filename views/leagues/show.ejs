@@ -1,0 +1,11 @@
+<h1><%= league.league %> has these teams: </h1>
+
+
+
+
+<a href="/Team/team-new">Add new Team</a>
+<a href="/leagues/<%= league._id %>/edit">Edit</a>
+
+<form action="/leagues/<%= league._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete League</button>
+</form>

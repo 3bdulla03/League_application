@@ -50,8 +50,8 @@ const teamRouter = require("./routes/team.js")
 // USE ROUTES //
 app.use("/auth", router)
 app.use("/profile", isSignedIn, routerProfile)
-app.use("/Team", isSignedIn,teamRouter)
-app.use("/league", isSignedIn, leagueRouter)
+app.use("/teams", isSignedIn,teamRouter)
+app.use("/leagues", isSignedIn, leagueRouter)
 
 // LISTEN SERVER //
 app.listen(3000, () => {

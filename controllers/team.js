@@ -3,7 +3,7 @@ const Team = require("../models/team")
 //getting the team-index.ejs
 exports.team_index_get= async ( req , res )=>{
   const team = await Team.find().populate("user")
-  res.render("Team/team-index.ejs",{team})
+  res.render("leagues/show.ejs",{team})
 }
 
 //getting the team-new.ejs
