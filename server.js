@@ -51,8 +51,8 @@ const playerRouter = require('./routes/player')
 // USE ROUTES //
 app.use("/auth", router)
 app.use("/profile", isSignedIn, routerProfile)
-app.use("/team", isSignedIn,teamRouter)
-app.use("/league", isSignedIn, leagueRouter)
+app.use("/teams", isSignedIn,teamRouter)
+app.use("/leagues", isSignedIn, leagueRouter)
 app.use('/players', isSignedIn, playerRouter)
 
 
