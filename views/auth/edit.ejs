@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
   </head>
-  <form action="/profile/edit?_method=PUT" method="POST"           enctype="multipart/form-data">
-    <h1>Update Profile</h1>
+  <div class="edit-form-container-1">
+    <div class="edit-form-container-2">
+      <form action="/profile/edit?_method=PUT" method="POST"           enctype="multipart/form-data">
+        <h1>Update Profile</h1>
 
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required value="<%= user.username %>" /></br>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required value="<%= user.username %>" /></br>
 
-      <br><label for="password">Password:</label>
-      <input type="password" id="password" name="password" required  /></br>
+          <br><label for="password">Password:</label>
+          <input type="password" id="password" name="password" required  /></br>
 
-      <br><label for="confirmPassword">Confirm Password:</label>
-      <input
-        type="password"
-        id="confirmPassword"
-        name="confirmPassword"
-        required
-      /></br>
-              <br> <input type="file" name="avatar" id="avatar" /></br>
+          <br><label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+                  <br> <input type="file" name="avatar" id="avatar" /></br>
 
-      </br><button type="submit">Submit</button>
-    </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>  
+    </div>  
   </body>
 </html>

@@ -8,18 +8,20 @@
   </head>
   <body>
     <%- include('../partials/_nav.ejs') %>
-    <div class="new-container">
-    <div class="new-form-container">
-      <h1>New League</h1>
-      <form action="/leagues" method="POST">
-        <label for="league-name">League Name: </label>
-        <input type="text" name="league" id="league-name" />
-        <label for="country">Country:</label>
-        <input type="text" name="country" id="country" />
+      <div class="create-page">
+      <div class="add-form-container-1">
+        <div class="add-form-container-2">
+          <h1>New League</h1>
+          <form action="/leagues" method="POST">
+            <label for="league-name">League Name: </label>
+            <input type="text" name="league" id="league-name" />
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" />
 
-        <button type="submit">Add League</button>
-      </form>
-    </div>
-  </div>
+            <button type="submit">Add League</button>
+          </form>
+        </div>
+      </div>
+    </div>  
   </body>
 </html>
