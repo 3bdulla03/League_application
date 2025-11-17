@@ -8,7 +8,7 @@ const { league_create_get } = require("./league")
 //   res.render("league/show.ejs",{team})
 // }
 
-//getting the team-new.ejs
+//getting the new.ejs
 exports.team_create_get = async (req, res) => {
   const league = await League.findById(req.params.leagueId)
   res.render("team/new.ejs", { league })
@@ -16,16 +16,20 @@ exports.team_create_get = async (req, res) => {
 
 //create a new team
 exports.team_create_post = async (req, res) => {
+  const league = await League.findById(req.params.leagueId)
   req.body.owner = req.session.user._id
-  await Team.create(req.body)
+  const newTeam = await Team.create(req.body)
+
+  league.teams.push(newTeam._id)
+  await league.save()
+
   res.redirect(`/leagues/${req.params.leagueId}`)
 }
 
 //getting the team-show.ejs
 exports.team_show_get = async (req, res) => {
-  const team = await Team.findById(req.params.teamId).populate("league")
-  const league = await League.findById(req.params.leagueId)
-  res.render("team/show.ejs", { team, league })
+  const league = await League.findById(req.params.leagueId).populate('teams')
+  res.render("team/show.ejs", { league })
 }
 
 //getting the team-edit.ejs

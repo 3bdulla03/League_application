@@ -9,11 +9,11 @@
   <body>
     <h1><%= league.league %> has these teams:</h1>
 
-    <br />
+    <br/>
     <table class="simple-table">
       <!--row 1-->
       <tr>
-        <th class="team-name" colspan="6">League: <%= league.name %></th>
+        <th class="team-name" colspan="6">Teams</th>
       </tr>
       <!--row 2-->
       <tr>
@@ -21,7 +21,7 @@
         <th>Name</th>
         <th>Coach</th>
       </tr>
-      <% teams.forEach((team, index) => { %>
+      <% league.teams.forEach((team, index) => { %>
       <tr
         onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>'"
       >
@@ -31,13 +31,16 @@
       </tr>
       <% }) %>
     </table>
-    <% if(league.manager._id.equals(user._id)) {%>
+
+
+
     <a href="/leagues/<%= league._id %>/teams/new">Add new Team</a>
     <br />
     <a href="/leagues/<%= league._id %>/edit">Edit</a>
+
     <form action="/leagues/<%= league._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete League</button>
     </form>
-    <% } %>
+
   </body>
 </html>
