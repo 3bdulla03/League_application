@@ -177,7 +177,7 @@ button:hover {
 
 .separate-show {
   position: absolute;
-  top: 80px;
+  top: 20px;
   right: 20px;
 
   display: flex;
@@ -186,7 +186,7 @@ button:hover {
 }
 
 .separate-show a {
-  margin-top: 45%;
+  margin-top: 0%;
   color: #00adb5;
   text-decoration: none;
   padding: 8px 15px;
@@ -196,6 +196,31 @@ button:hover {
 }
 
 .separate-show a:hover {
+  background-color: black;
+  color: white;
+}
+
+.add-show {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.add-show a {
+  margin-top: 100%;
+  color: #00adb5;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: #393e46;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.add-show a:hover {
   background-color: black;
   color: white;
 }
@@ -228,8 +253,12 @@ h3 {
 h4 {
   margin: 0 0 15px 0;
   font-size: 1.3em;
+  color: #00adb5;
 }
 
+a{
+  color: #00adb5;
+}
 .profile-info a {
   display: inline-block;
   margin-top: 10px;
