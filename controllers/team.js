@@ -29,28 +29,31 @@ exports.team_create_post = async (req, res) => {
 //getting the team-show.ejs
 exports.team_show_get = async (req, res) => {
   const league = await League.findById(req.params.leagueId).populate('teams')
-  res.render("team/show.ejs", { league })
+  const team = await Team.findById(req.params.teamId).populate('players')
+  res.render("team/show.ejs", { league, team })
 }
 
 //getting the team-edit.ejs
 exports.team_edit_get = async (req, res) => {
-  const team = await Team.findById(req.params.teamId, req.body).populate(
-    "league"
-  )
+  const team = await Team.findById(req.params.teamId)
   const league = await League.findById(req.params.leagueId)
   res.render("team/edit.ejs", { team, league })
 }
 
 //updating the page
 exports.team_edit_put = async (req, res) => {
-  await Team.findByIdAndUpdate(req.params.teamId, req.body).populate("league")
+  await Team.findByIdAndUpdate(req.params.teamId, req.body)
 
   res.redirect(`/leagues/${req.params.leagueId}/teams/${req.params.teamId}`)
 }
 
 //deleting a Team
 exports.team_del_delete = async (req, res) => {
-  await Team.findByIdAndDelete(req.params.teamId).populate("league")
   const league = await League.findById(req.params.leagueId)
+
+  await Team.findByIdAndDelete(req.params.teamId)
+  league.teams.pull(req.params.teamId)
+
+  league.save()
   res.redirect(`/leagues/${req.params.leagueId}`)
 }

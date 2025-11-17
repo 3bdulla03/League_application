@@ -18,9 +18,8 @@ exports.league_create_post = async (req, res) => {
 }
 
 exports.league_show_get = async (req, res) => {
-  const league = await League.findById(req.params.leagueId).populate("teams")
-  const teams = await Team.find()
-  res.render("league/show.ejs", { league, teams })
+  const league = await League.findById(req.params.leagueId).populate('teams')
+  res.render("league/show.ejs", { league })
 }
 
 exports.league_edit_get = async (req, res) => {
