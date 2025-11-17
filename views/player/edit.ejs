@@ -7,30 +7,37 @@
   <title>Edit Player</title>
 </head>
 <body>
-  <form action="/players/<%= player._id %>?_method=PUT" method="POST">
+  <div class="edit-page">
+    <div class="edit-form-container-1">
+      <div class="edit-form-container-2">
+        <form action="/players/<%= player._id %>?_method=PUT" method="POST">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name"id='name' value="<%= player.name %>">
+          <label for="name">Name:</label>
+          <input type="text" name="name"id='name' value="<%= player.name %>">
 
-    <label for="nationality">Nationality:</label>
-    <input type="text" name="nationality"id='nationality' value="<%= player.nationality %>">
+          <label for="nationality">Nationality:</label>
+          <input type="text" name="nationality"id='nationality' value="<%= player.nationality %>">
 
-    <label for="position">Position:</label>
-    <select name="position" id="position">
-      <option value="Striker" <%= player.position == 'Striker'? 'selected' : ' '%> >Striker</option>
-      <option value="Midfielder" <%= player.position == 'Midfielder'? 'selected' : ' '%> >Midfielder</option>
-      <option value="Defender" <%= player.position == 'Defender'? 'selected' : ' '%> >Defender</option>
-      <option value="Goalkeeper" <%= player.position == 'Goalkeeper'? 'selected' : ' '%> >Goalkeeper</option>
-    </select>
+          <label for="position">Position:</label>
+          <select name="position" id="position">
+            <option value="Striker" <%= player.position == 'Striker'? 'selected' : ' '%> >Striker</option>
+            <option value="Midfielder" <%= player.position == 'Midfielder'? 'selected' : ' '%> >Midfielder</option>
+            <option value="Defender" <%= player.position == 'Defender'? 'selected' : ' '%> >Defender</option>
+            <option value="Goalkeeper" <%= player.position == 'Goalkeeper'? 'selected' : ' '%> >Goalkeeper</option>
+          </select>
 
-    <label for="photo">Photo:</label>
-    <input type="text" name="photo"id='photo'>
+          <label for="photo">Photo:</label>
+          <input type="text" name="photo"id='photo'>
 
 
-    <label for="rating">Rating:</label>
-    <input type="number" name="rating"id='rating' step="0.1" min="0" max="10" value="<%= player.rating %>">
+          <label for="rating">Rating:</label>
+          <input type="number" name="rating"id='rating' step="0.1" min="0" max="10" value="<%= player.rating %>">
 
-    <input type="submit" value="Update">
-  </form>
+          <input type="submit" value="Update">
+        </form>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html>
