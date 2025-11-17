@@ -3,21 +3,22 @@ const mongoose = require("mongoose")
 const leagueSchema = new mongoose.Schema({
   league: {
     type: String,
-    required: true
+    required: true,
   },
   country: {
     type: String,
-    required: true
+    required: true,
   },
   manager: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: "User",
   },
-  teams: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Team",
-    required: false
-  }],
+  teams: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
 })
 
 const League = mongoose.model("League", leagueSchema)
