@@ -9,39 +9,44 @@ const { league_create_get } = require("./league")
 // }
 
 //getting the team-new.ejs
-exports.team_create_get= async ( req , res )=>{
+exports.team_create_get = async (req, res) => {
   const league = await League.findById(req.params.leagueId)
-  res.render('team/new.ejs', {league})
+  res.render("team/new.ejs", { league })
 }
 
 //create a new team
-exports.team_create_post= async ( req , res )=>{
-  req.body.owner=req.session.user._id
+exports.team_create_post = async (req, res) => {
+  req.body.owner = req.session.user._id
   await Team.create(req.body)
   res.redirect(`/leagues/${req.params.leagueId}`)
 }
 
-
 //getting the team-show.ejs
-exports.team_show_get= async ( req , res )=>{
-  const team = await Team.findById(req.params.teamId).populate("user")
-  res.render("team/show.ejs", {team})
+exports.team_show_get = async (req, res) => {
+  const team = await Team.findById(req.params.teamId).populate("league")
+  const league = await League.findById(req.params.leagueId)
+  res.render("team/show.ejs", { team, league })
 }
 
 //getting the team-edit.ejs
-exports.team_edit_get= async ( req , res )=>{
-  const team = await Team.findById( req.params.teamId , req.body ).populate("user")
-  res.render("team/edit.ejs", {team})
+exports.team_edit_get = async (req, res) => {
+  const team = await Team.findById(req.params.teamId, req.body).populate(
+    "league"
+  )
+  const league = await League.findById(req.params.leagueId)
+  res.render("team/edit.ejs", { team, league })
 }
 
 //updating the page
-exports.team_edit_put= async ( req , res )=>{
-  await Team.findByIdAndUpdate( req.params.teamId , req.body ).populate("user")
-  res.redirect(`leagues/${req.params.leagueId}/teams/${req.params.teamId}`)
+exports.team_edit_put = async (req, res) => {
+  await Team.findByIdAndUpdate(req.params.teamId, req.body).populate("league")
+
+  res.redirect(`/leagues/${req.params.leagueId}/teams/${req.params.teamId}`)
 }
 
 //deleting a Team
-exports.team_del_delete= async ( req , res )=>{
-  await Team.findByIdAndDelete(req.params.teamId).populate("user")
-  res.redirect(`leagues/${req.params.leagueId}`)
+exports.team_del_delete = async (req, res) => {
+  await Team.findByIdAndDelete(req.params.teamId).populate("league")
+  const league = await League.findById(req.params.leagueId)
+  res.redirect(`/leagues/${req.params.leagueId}`)
 }

@@ -9,9 +9,9 @@ const teamSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
-  user:{
+  league:{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'League'
     }
 })
 const Team = mongoose.model('Team',teamSchema)
