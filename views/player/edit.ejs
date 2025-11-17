@@ -7,7 +7,7 @@
   <title>Edit Player</title>
 </head>
 <body>
-  <form action="/players/<%= player._id %>?_method=PUT" method="POST">
+  <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=PUT" method="POST">
 
     <label for="name">Name:</label>
     <input type="text" name="name"id='name' value="<%= player.name %>">
