@@ -7,8 +7,7 @@
     <title>Leagues</title>
   </head>
   <body>
-    <%- include('../partials/_nav.ejs') %>
-    <h1>League Management System</h1>
+  <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
     <p>Leagues: </p>
     <% league.forEach((league)=> { %>
     <a href="/leagues/<%= league._id %>">

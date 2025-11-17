@@ -88,8 +88,15 @@ body {
 }
 
 .header-bar {
+  height: 10%;
+  align-items: center;
   background-color: white;
   color: black;
+}
+
+.user-welcome {
+  color: #00adb5;
+  padding: 1.5%;
 }
 
 .signup-page,
@@ -210,6 +217,36 @@ button:hover {
   background-color: black;
   color: white;
 }
+
+.buttons-show {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.buttons-show a, button {
+  margin-top: 150%;
+  color: #00adb5;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: #393e46;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.buttons-show a:hover {
+  background-color: black;
+  color: white;
+}
+.buttons-show button:hover {
+  background-color: black;
+  color: white;
+}
+
 
 .add-show {
   position: absolute;
