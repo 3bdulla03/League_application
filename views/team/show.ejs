@@ -17,7 +17,7 @@
     <h3><%= team.coach %></h3>
     <br /><br />
 
-    <% if(user._id) {%>
+    <% if(league.manager._id.equals(user._id)) {%>
     <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/edit"
       ><button>edit</button></a
     >

@@ -8,9 +8,7 @@
   </head>
   <body>
     <h1><%= league.league %> has these teams:</h1>
-    <a href="/leagues/<%= league._id %>/teams/new">Add new Team</a>
-    <br />
-    <a href="/leagues/<%= league._id %>/edit">Edit</a>
+
     <br />
     <table class="simple-table">
       <!--row 1-->
@@ -33,8 +31,13 @@
       </tr>
       <% }) %>
     </table>
+    <% if(league.manager._id.equals(user._id)) {%>
+    <a href="/leagues/<%= league._id %>/teams/new">Add new Team</a>
+    <br />
+    <a href="/leagues/<%= league._id %>/edit">Edit</a>
     <form action="/leagues/<%= league._id %>?_method=DELETE" method="POST">
       <button type="submit">Delete League</button>
     </form>
+    <% } %>
   </body>
 </html>
