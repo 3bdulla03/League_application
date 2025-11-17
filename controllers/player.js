@@ -2,13 +2,13 @@ const Team = require('../models/team.js')
 const Player = require('../models/player.js')
 
 
-//index
-exports.player_index_get = async(req,res)=>{
-  //view should send team Id throw url using url-parameter
-  //const players = await Player.find({team: req.params.teamId})//players array to show in the view table
-  const players = await Player.find().populate('team')
-  res.render('player/index.ejs', {players})
-}
+// //index
+// exports.player_index_get = async(req,res)=>{
+//   //view should send team Id throw url using url-parameter
+//   //const players = await Player.find({team: req.params.teamId})//players array to show in the view table
+//   const players = await Player.find().populate('team')
+//   res.render('player/index.ejs', {players})
+// }
 
 
 //create
@@ -23,7 +23,7 @@ exports.player_new_post = async(req,res)=>{
   req.body.team = req.params.teamId //adding the team id to the player object
   const create = await Player.create(req.body)
   await create.save()
-  res.redirect('/players')//redirect to players/index
+  res.redirect(`leagues/${req.params.leagueId}/teams/${req.params.teamId}/players`)//redirect to players/index
 }
 
 //show one
@@ -35,7 +35,7 @@ exports.player_show_get = async(req,res)=>{
 //delete
 exports.player_delete_destroy = async (req,res)=>{
   const player = await Player.findByIdAndDelete(req.params.playerId)
-  res.redirect('/players')
+  res.redirect(`leagues/${req.params.leagueId}/teams/${req.params.teamId}/players`)
 }
 
 //edit
@@ -45,5 +45,5 @@ exports.player_show_edit = async (req,res)=>{
 }
 exports.player_update_put = async (req,res)=>{
   const player =await Player.findByIdAndUpdate(req.params.playerId, req.body)
-  res.redirect(`/players/${req.params.playerId}`)
+  res.redirect(`leagues/${req.params.leagueId}/teams/${req.params.teamId}/players/${req.params.playerId}`)
 }

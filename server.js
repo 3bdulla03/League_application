@@ -46,14 +46,10 @@ app.get("/", (req, res) => {
 const router = require("./routes/auth")
 const routerProfile = require("./routes/routerProfile")
 const leagueRouter = require("./routes/league.js")
-const teamRouter = require("./routes/team.js")
-const playerRouter = require('./routes/player')
 // USE ROUTES //
 app.use("/auth", router)
 app.use("/profile", isSignedIn, routerProfile)
-app.use("/teams", isSignedIn,teamRouter)
 app.use("/leagues", isSignedIn, leagueRouter)
-app.use('/players', isSignedIn, playerRouter)
 
 
 // LISTEN SERVER //
