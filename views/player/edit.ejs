@@ -7,6 +7,7 @@
   <title>Edit Player</title>
 </head>
 <body>
+  <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
   <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=PUT" method="POST">
 
     <label for="name">Name:</label>
@@ -28,9 +29,11 @@
 
 
     <label for="rating">Rating:</label>
+
     <input type="number" name="rating"id='rating' step="0.1" min="0" max="10" value="<%= player.rating %>">
 
     <input type="submit" value="Update">
+
   </form>
 </body>
 </html>

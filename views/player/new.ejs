@@ -4,33 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Create Player</title>
 </head>
 <body>
-  <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players" method="post">
+  <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
+  <div class="create-page">
+    <div class="add-form-container-1">
+      <div class="add-form-container-2">
+        <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players" method="post">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name"id='name'>
+          <label for="name">Name:</label>
+          <input type="text" name="name"id='name'>
 
-    <label for="nationality">Nationality:</label>
-    <input type="text" name="nationality"id='nationality'>
+          <label for="nationality">Nationality:</label>
+          <input type="text" name="nationality"id='nationality'>
 
-    <label for="position">Position:</label>
-    <select name="position" id="position">
-      <option value="Striker">Striker</option>
-      <option value="Midfielder">Midfielder</option>
-      <option value="Defender">Defender</option>
-      <option value="Goalkeeper">Goalkeeper</option>
-    </select>
+          <label for="position">Position:</label>
+          <select name="position" id="position">
+            <option value="Striker">Striker</option>
+            <option value="Midfielder">Midfielder</option>
+            <option value="Defender">Defender</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+          </select>
 
-    <label for="photo">Photo:</label>
-    <input type="text" name="photo"id='photo'>
+          <label for="photo">Photo:</label>
+          <input type="text" name="photo"id='photo'>
 
 
-    <label for="rating">Rating:</label>
-    <input type="number" name="rating"id='rating' step="0.1" min="0" max="10">
+          <label for="rating">Rating:</label>
+          <input type="number" name="rating"id='rating' step="0.1" min="0" max="10">
 
-    <input type="submit" value="Create Player">
-  </form>
+          <input type="submit" value="Create Player">
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
