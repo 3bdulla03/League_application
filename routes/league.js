@@ -48,14 +48,14 @@ router.get(
 
 router.put(
   "/:leagueId/teams/:teamId/players/:playerId",
-  playerCtrl.trade_player_put
-)
-
-router.put(
-  "/:leagueId/teams/:teamId/players/:playerId",
   playerCtrl.player_update_put
 )
 
 // trade player
+
+router.put(
+  "/:leagueId/teams/:teamId/players/:playerId",
+  playerCtrl.trade_player_put
+)
 
 module.exports = router

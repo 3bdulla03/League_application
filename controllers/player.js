@@ -62,24 +62,30 @@ exports.player_update_put = async (req, res) => {
 // trading player
 
 exports.trade_player_put = async (req, res) => {
-  console.log("hello")
   const league = await League.findById(req.params.leagueId)
 
-  const currentTeam = await league.teams.find((team) => {
-    team._id
+  const nId = req.params.teamId
+  // const newId = nId.toString()
+  const currentTeam = league.teams.filter((team) => {
+    return team.equals(nId)
   })
+  console.log(currentTeam)
 
-  const newTeam = await league.teams.find((team) => {
-    team.req.body.trade_team
-  })
+  const newTeam = await Team.findOne({ name: req.body.trade_team })
+
+  console.log(newTeam)
 
   const player = await Player.findById(req.params.playerId)
+  console.log(player)
 
   newTeam.players.push(player._id)
   await newTeam.save()
 
-  currentTeam.players.pull(player._id)
-  await currentTeam.save()
+  await Team.findByIdAndUpdate(req.params.teamId, {
+    $pull: {
+      players: req.params.playerId,
+    },
+  })
 
   res.redirect(`/leagues/${req.params.leagueId}/teams/${req.params.teamId}`)
 }
