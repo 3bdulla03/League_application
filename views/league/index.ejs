@@ -8,17 +8,27 @@
   </head>
   <body>
   <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
-    <p>Leagues: </p>
-    <% league.forEach((league)=> { %>
-    <a href="/leagues/<%= league._id %>">
-      <h4><%= league.league %> League</h4>
-      <p>Managed by <%= league.manager.username %></p>
-    </a>
-    <% }) %>
-
-    <section class="add-show">
-      <a href="/leagues/new">Add new League</a>
-    </section>
   
-    </body>
+  <div class="home"> 
+  
+    <div class="page-header">
+      <p>Leagues: </p>
+    </div>  
+
+      <div class="leagues-list">
+        <% league.forEach((league)=> { %>
+          <div class="league-card">
+            <h2><a href="/leagues/<%= league._id %>">
+            <%= league.league %></a></h2>
+            <div class="manager-info">
+              <p>Managed by <%= league.manager.username %></p>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+    <section class="add-show">
+      <a href="/leagues/new" class="add-league-btn">Add new League</a>
+    </section>
+  </body>
 </html>
