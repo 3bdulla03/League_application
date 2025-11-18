@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>league show</title>
+    <title><%= league.league %> League</title>
   </head>
   <body>
     <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
@@ -32,7 +32,7 @@
       <tr
         onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>'"
       >
-        <td><%= index %></td>
+        <td><%= index + 1%></td>
         <td><%= team.name %></td>
         <td><%= team.coach %></td>
       </tr>

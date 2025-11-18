@@ -7,7 +7,6 @@ exports.league_index_get = async (req, res) => {
 }
 
 exports.league_create_get = async (req, res) => {
-  // const league = await League.find().populate('user')
   res.render("league/new.ejs")
 }
 
@@ -38,6 +37,11 @@ exports.league_update_put = async (req, res) => {
 }
 
 exports.league_delete_delete = async (req, res) => {
-  const league = await League.findByIdAndDelete(req.params.leagueId)
-  res.redirect("/leagues")
+  const league = await League.findById(req.params.leagueId).populate("manager")
+  if (league.manager.equals(req.session.user._id)) {
+    await League.findByIdAndDelete(req.params.leagueId)
+    res.redirect("/leagues")
+  } else {
+    res.send("You don't have permission to do that.")
+  }
 }
