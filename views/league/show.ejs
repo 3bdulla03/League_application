@@ -31,6 +31,7 @@
       <% }) %>
     </table>
     <% if(league.manager._id.equals(user._id)) {%>
+    <div>  
     <section class="buttons-show">  
       <div class="b-1"><a href="/leagues/<%= league._id %>/teams/new">Add new Team</a></div>
       <div class="b-2"><a href="/leagues/<%= league._id %>/edit">Edit</a></div>
@@ -38,6 +39,7 @@
         <button type="submit">Delete League</button>
       </form></div>
     </section>
+    </div>
     <% } %>
   </body>
 </html>

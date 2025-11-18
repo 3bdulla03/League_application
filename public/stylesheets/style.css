@@ -235,9 +235,9 @@ button:hover {
 }
 
 .buttons-show {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position:absolute;
+  top: 200px;
+  right: 200px;
 
   display: flex;
   flex-direction: row;
@@ -251,7 +251,6 @@ button:hover {
   padding: 8px 15px;
   background-color: #393e46;
   border-radius: 8px;
-  font-weight: bold;
 }
 
 .buttons-show a:hover {
