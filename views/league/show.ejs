@@ -12,7 +12,7 @@
     <table class="simple-table">
       <!--row 1-->
       <tr>
-        <th class="team-name" colspan="6">League: <%= league.name %></th>
+        <th class="team-name" colspan="6">Teams</th>
       </tr>
       <!--row 2-->
       <tr>
@@ -20,7 +20,7 @@
         <th>Name</th>
         <th>Coach</th>
       </tr>
-      <% teams.forEach((team, index) => { %>
+      <% league.teams.forEach((team, index) => { %>
       <tr
         onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>'"
       >

@@ -18,7 +18,37 @@
     <h3><%= team.coach %></h3>
     <br /><br />
 
-    <% if(league.manager._id.equals(user._id)) {%>
+
+
+    <table class="simple-table">
+      <!--row 1-->
+      <tr>
+        <th class="team-name" colspan="6">Players</th>
+      </tr>
+      <!--row 2-->
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Nationality</th>
+        <th>Position</th>
+        <th>Rating</th>
+      </tr>
+      <% team.players.forEach((player, index) => { %>
+      <tr
+        onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id%>'"
+      >
+        <td><%= index %></td>
+        <td><%= player.name %></td>
+        <td><%= player.nationality %></td>
+        <td><%= player.position %></td>
+        <td><%= player.rating %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <br>
+    <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/new">Add a Player here</a>
+    
     <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/edit"
       ><button>edit</button></a
     >
@@ -28,8 +58,5 @@
     >
       <button type="submit">delete</button>
     </form>
-    <%}else{ %>
-    <p>Task not for u , <%= user.username %></p>
-    <% } %>
   </body>
 </html>
