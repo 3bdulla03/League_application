@@ -54,7 +54,7 @@ router.put(
 // trade player
 
 router.put(
-  "/:leagueId/teams/:teamId/players/:playerId",
+  "/:leagueId/teams/:teamId/players/:playerId/trade",
   playerCtrl.trade_player_put
 )
 
