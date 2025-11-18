@@ -12,7 +12,7 @@
   <div class="create-page">
     <div class="add-form-container-1">
       <div class="add-form-container-2">
-        <form action="/players" method="post">
+        <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players" method="post">
 
           <label for="name">Name:</label>
           <input type="text" name="name"id='name'>
