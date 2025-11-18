@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>league-Team</title>
+  <title>Teams</title>
 </head>
 <body>
-  <%- include("../partials/_nav.ejs") %>
-  <h1>Teams</h1>
-  <a href="Team/new">new-Team</a>
-  <% team.forEach((teams)=>{ %>
-    <a href="Team/<%= teams._id %>"><h4><%= teams.name %></h4></a>
-    <% }) %>
+  <div class="header-bar"><%- include("../partials/_nav.ejs") %></div>
+    <h1>Teams:</h1>
+
+    <a href="Team/new">new-Team</a>
+    <% team.forEach((teams)=>{ %>
+      <a href="Team/<%= teams._id %>"><h4><%= teams.name %></h4></a>
+      <% }) %>
 </body>
 </html>

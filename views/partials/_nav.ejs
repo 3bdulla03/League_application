@@ -1,11 +1,16 @@
 <nav>
   <% if(user){ %>
-  <h3 class="user-welcome">Leagues Manager</h3>
-  <section class="separate-show">
-    <a href="/leagues">Leagues</a>
-    <a href="/profile">Profile</a>
-    <a href="/auth/sign-out">Sign Out</a>
-  </section>
+  <div class="header-bar-content">
+    <div class="logo-text-container">
+      <div class="logo"></div>  
+      <h3 class="user-welcome">Leagues Manager</h3>
+    </div>
+    <section class="separate-show">
+      <a href="/leagues">Leagues</a>
+      <a href="/profile">Profile</a>
+      <a href="/auth/sign-out">Sign Out</a>
+    </section>
+  </div>  
   <% } else { %>
   <div class="landing-header">
     <div class="logo-container">
