@@ -33,7 +33,11 @@
           <td><%= player.rating %></td>
         </tr>
     </table>
-    <a href="/players/<%= player._id %>/edit">Edit Player</a>
-    <form action="/players/<%= player._id %>?_method=DELETE" method="POST"><button type="submit">Delete Player</button></form>
+
+    <br>
+    <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/edit">Edit Player</a>
+
+    <br>
+    <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=DELETE" method="POST"><button type="submit">Delete Player</button></form>
   </body>
 </html>
