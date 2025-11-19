@@ -30,6 +30,7 @@
         <td><%= player.rating %></td>
       </tr>
     </table>
+    <% if(league.manager._id.equals(user._id)) {%>
     <form
       action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/trade?_method=PUT"
       method="POST"
@@ -50,5 +51,9 @@
     >
       <button type="submit">Delete Player</button>
     </form>
+    <% } else { %>
+    <br />
+    <h4>You have view-only access. <%= user.username %></h4>
+    <% } %>
   </body>
 </html>

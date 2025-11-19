@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Tourney:ital,wght@0,900;1,900&display=swap");
 
-a{
+a {
   color: chartreuse;
 }
 body {
@@ -130,8 +130,7 @@ body {
 }
 
 .signup-page,
-.signin-page
- {
+.signin-page {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -142,8 +141,7 @@ body {
 }
 
 .edit-page,
-.create-page
- {
+.create-page {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -151,7 +149,6 @@ body {
   height: 200%;
   row-gap: 15px;
 }
-
 
 .signup-form-container-1,
 .signin-form-container-1,
@@ -175,7 +172,7 @@ body {
 .signup-form-container-2 > h1,
 .signin-form-container-2 > h1,
 .edit-form-container-2 > h1,
-.add-form-container-2 > h1{
+.add-form-container-2 > h1 {
   font-weight: normal;
   text-transform: uppercase;
   font-size: 1.5em;
@@ -273,7 +270,7 @@ button:hover {
   align-items: center;
 }
 
-.buttons-show button{
+.buttons-show button {
   margin: 0;
   color: #00adb5;
   text-decoration: none;
@@ -287,7 +284,8 @@ button:hover {
   cursor: pointer;
 }
 
-.buttons-show a, button {
+.buttons-show a,
+button {
   margin-top: 0;
   color: #00adb5;
   text-decoration: none;
@@ -313,8 +311,6 @@ button:hover {
 .buttons-show button.delete:hover {
   background-color: #b71c1c;
 }
-
-
 
 .add-show {
   margin-top: 30px;
@@ -367,7 +363,7 @@ h4 {
   color: #00adb5;
 }
 
-a{
+a {
   color: #00adb5;
 }
 .profile-info a {
@@ -416,8 +412,7 @@ a{
   color: white;
 }
 
-
-/* Ali table Style *//* Ali table Style *//* Ali table Style *//* Ali table Style */
+/* Ali table Style */ /* Ali table Style */ /* Ali table Style */ /* Ali table Style */
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .simple-table {
   color: #6f8dae;
@@ -637,12 +632,12 @@ a{
   box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
 }
 
-.delete{
+.delete {
   background-color: #d32f2f;
   color: white;
 }
 
-.delete:hover{
+.delete:hover {
   background-color: #b71c1c;
 }
 
