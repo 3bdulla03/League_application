@@ -735,3 +735,29 @@ a {
   box-shadow: 0 6px 20px rgba(0, 173, 181, 0.5);
   background: linear-gradient(135deg, #00fff5 0%, #00adb5 100%);
 }
+
+.player_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.player_info {
+  width: 40%;
+}
+
+.player_profile {
+  width: 60%;
+  display: flex;
+  justify-content: center; /* image in the middle */
+  align-items: flex-start;
+}
+
+.player_profile img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #ccc; /* optional, looks like an ID photo */
+}

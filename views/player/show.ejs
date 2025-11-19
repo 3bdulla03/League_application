@@ -7,29 +7,30 @@
     <title><%= player.name %></title>
   </head>
   <body>
-    <table class="simple-table">
-      <!--row 1-->
-      <tr>
-        <th class="team-name" colspan="4">
-          Team Name: <%= player.team ? player.team.name : "no team" %>
-        </th>
-      </tr>
-      <!--row 2-->
-      <tr>
-        <th>Profile</th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Position</th>
-        <th>Rating</th>
-      </tr>
-      <tr>
-        <td><img src="/upload/<%= player.image %>" width="20%" /></td>
-        <td><%= player.name %></td>
-        <td><%= player.nationality %></td>
-        <td><%= player.position %></td>
-        <td><%= player.rating %></td>
-      </tr>
-    </table>
+    <div class="player_container">
+      <div class="player_info">
+        <h1><%= player.name %> Profile</h1>
+        <h3>Name :</h3>
+        <h4><%= player.name %></h4>
+
+        <h3>Nationality :</h3>
+        <h4><%= player.nationality %></h4>
+
+        <h3>Team :</h3>
+        <h4><%= player.team ? player.team.name : "no team" %></h4>
+
+        <h3>Position :</h3>
+        <h4><%= player.position %></h4>
+
+        <h3>Rating :</h3>
+        <h4><%= player.rating %></h4>
+      </div>
+
+      <div class="player_profile">
+        <img src="/upload/<%= player.image %>" alt="Player Image" />
+      </div>
+    </div>
+
     <% if(league.manager._id.equals(user._id)) {%>
     <form
       action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/trade?_method=PUT"
