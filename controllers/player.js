@@ -22,7 +22,10 @@ exports.player_new_post = async (req, res) => {
   //create player functionality
   const team = await Team.findById(req.params.teamId)
   req.body.team = req.params.teamId //adding the team id to the player object
+  req.body.image = req.file.filename
+
   const newPlayer = await Player.create(req.body)
+
   team.players.push(newPlayer._id)
   newPlayer.save()
   team.save()
@@ -53,7 +56,13 @@ exports.player_show_edit = async (req, res) => {
 exports.player_update_put = async (req, res) => {
   const league = await League.findById(req.params.leagueId)
   const team = await Team.findById(req.params.teamId)
-  const player = await Player.findByIdAndUpdate(req.params.playerId, req.body)
+  const player = await Player.findByIdAndUpdate(
+    req.params.playerId,
+    req.body,
+  ).populate("team")
+  player.image = req.file.filename
+  await player.save()
+
   res.redirect(
     `/leagues/${req.params.leagueId}/teams/${req.params.teamId}/players/${req.params.playerId}`
   )

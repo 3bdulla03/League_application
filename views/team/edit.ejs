@@ -7,16 +7,22 @@
     <title><%=team.name%> Edit</title>
   </head>
   <body>
-      <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
-      <div class="edit-page">
+    <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
+    <div class="edit-page">
       <div class="edit-form-container-1">
         <div class="edit-form-container-2">
           <h1>Team Edit</h1>
           <form
             action="/leagues/<%= league._id %>/teams/<%= team._id %>?_method=PUT"
-            method="POST">
+            method="POST"
+          >
             <label for="name">Team name:</label><br />
-            <input type="text" name="name" id="name" value="<%= team.name %>" /><br />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value="<%= team.name %>"
+            /><br />
 
             <label for="coach">coach</label><br />
             <input
@@ -25,10 +31,12 @@
               id="coach"
               value="<%= team.coach %>"
             />
+
+
             <button type="submit">Update</button>
           </form>
-        </div>  
-      </div>  
-    </div>  
+        </div>
+      </div>
+    </div>
   </body>
 </html>

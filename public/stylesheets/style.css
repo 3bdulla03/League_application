@@ -223,7 +223,7 @@ button:hover {
   width: 40%;
   position: relative;
   z-index: -10;
-  margin-top: -150px; 
+  margin-top: -150px;
 }
 
 .signin-img {
@@ -282,7 +282,7 @@ button:hover {
   border-radius: 8px;
   font-family: "Momo Trust Display", sans-serif;
   font-size: 1em;
-  font-weight: normal; 
+  font-weight: normal;
   border: none;
   cursor: pointer;
 }
@@ -306,12 +306,12 @@ button:hover {
 }
 
 .buttons-show button.delete {
-  background-color: #d32f2f;  
+  background-color: #d32f2f;
   color: white;
 }
 
 .buttons-show button.delete:hover {
-  background-color: #b71c1c;  
+  background-color: #b71c1c;
 }
 
 
@@ -622,8 +622,8 @@ a{
 .btn-delete {
   background-color: #d32f2f;
   color: white;
-  padding: 10px 20px; 
-  margin: 0;      
+  padding: 10px 20px;
+  margin: 0;
   border-radius: 8px;
   font-family: "Momo Trust Display", sans-serif;
   font-size: 1em;

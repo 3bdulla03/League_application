@@ -4,6 +4,9 @@ const leagueCont = require("../controllers/league")
 const teamCtrl = require("../controllers/team")
 const playerCtrl = require("../controllers/player.js")
 
+const multer = require("multer")
+const upload = multer({ dest: "public/upload/" })
+
 router.get("/", leagueCont.league_index_get)
 
 router.get("/new", leagueCont.league_create_get)
@@ -29,7 +32,11 @@ router.put("/:leagueId/teams/:teamId", teamCtrl.team_edit_put)
 
 //player
 router.get("/:leagueId/teams/:teamId/players/new", playerCtrl.player_new_get)
-router.post("/:leagueId/teams/:teamId/players", playerCtrl.player_new_post)
+router.post(
+  "/:leagueId/teams/:teamId/players",
+  upload.single("image"),
+  playerCtrl.player_new_post
+)
 
 router.get(
   "/:leagueId/teams/:teamId/players/:playerId",
@@ -48,6 +55,8 @@ router.get(
 
 router.put(
   "/:leagueId/teams/:teamId/players/:playerId",
+  upload.single("image"),
+
   playerCtrl.player_update_put
 )
 
