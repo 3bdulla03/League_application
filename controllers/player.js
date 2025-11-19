@@ -58,7 +58,7 @@ exports.player_update_put = async (req, res) => {
   const team = await Team.findById(req.params.teamId)
   const player = await Player.findByIdAndUpdate(
     req.params.playerId,
-    req.body,
+    req.body
   ).populate("team")
   player.image = req.file.filename
   await player.save()
@@ -78,17 +78,18 @@ exports.trade_player_put = async (req, res) => {
   const currentTeam = league.teams.filter((team) => {
     return team.equals(nId)
   })
-  console.log(currentTeam)
 
   const newTeam = await Team.findOne({ name: req.body.trade_team })
 
-  console.log(newTeam)
-
   const player = await Player.findById(req.params.playerId)
-  console.log(player)
 
-  newTeam.players.push(player._id)
-  await newTeam.save()
+  if (newTeam) {
+    newTeam.players.push(player._id)
+    await newTeam.save()
+    return
+  } else {
+    res.send("No team Found")
+  }
 
   await Team.findByIdAndUpdate(req.params.teamId, {
     $pull: {
