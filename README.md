@@ -23,7 +23,7 @@
 
 
 
-##App overview
+## App overview
 ![Landing Page](./public/appOverview/landing.png)
 
 
