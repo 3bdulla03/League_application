@@ -15,17 +15,16 @@ body {
 
 .landing-header {
   display: flex;
-  flex-direction: row;
-  height: 15%;
-  width: 100%;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
 }
 
 .logo-container {
   display: flex;
-  flex-direction: row;
-  width: 50%;
-  margin: 20px 35px;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo-container > h1 {
@@ -77,6 +76,8 @@ body {
 .auth-links,
 .nav-links {
   margin: 25px 20px;
+  gap: 35px;
+
 }
 
 .auth-links > a {
@@ -236,13 +237,14 @@ button:hover {
 }
 
 .separate-show {
+  margin: 0 15px;
   position: absolute;
   top: 20px;
   right: 20px;
-
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 35px;
 }
 
 .separate-show a {
@@ -735,3 +737,391 @@ a {
   box-shadow: 0 6px 20px rgba(0, 173, 181, 0.5);
   background: linear-gradient(135deg, #00fff5 0%, #00adb5 100%);
 }
+
+.player-profile-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 30px;
+}
+
+.player-card {
+  background: linear-gradient(135deg, #393e46 0%, #2d3239 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, #00adb5 0%, #008a94 100%);
+}
+
+.player-image {
+  flex-shrink: 0;
+}
+
+.player-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.player-main-info h1 {
+  font-size: 2.5em;
+  color: white;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.player-team {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.player-team .label {
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 10px;
+}
+
+.player-team .value {
+  font-weight: bold;
+  color: white;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: #222831;
+  padding: 0;
+}
+
+.stat-item {
+  background-color: #2d3239;
+  padding: 25px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.stat-item:hover {
+  background-color: #393e46;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8em;
+  color: #eeeeee;
+  font-weight: bold;
+}
+
+.stat-value.rating {
+  color: #ffd700;
+  font-size: 2.2em;
+}
+
+.player-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.action-card {
+  background-color: #393e46;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-card h3 {
+  color: #00adb5;
+  margin: 0 0 20px 0;
+  font-size: 1.3em;
+}
+
+.action-card label {
+  display: block;
+  color: #b0b0b0;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.action-card input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #2d3239;
+  border-radius: 8px;
+  background-color: #2d3239;
+  color: white;
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+.action-card input:focus {
+  outline: none;
+  border-color: #00adb5;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00adb5 0%, #008a94 100%);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  font-size: 1em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 173, 181, 0.4);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.action-buttons a,
+.action-buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: "Momo Trust Display", sans-serif;
+  font-size: 1em;
+}
+
+.btn-edit {
+  background-color: #00adb5;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #00fff5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 173, 181, 0.4);
+}
+
+button.btn-delete,
+.btn-delete {
+  background-color: #d32f2f;
+  color: white;
+}
+
+button.btn-delete:hover,
+.btn-delete:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 30px;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-header h1 {
+  color: #00adb5;
+  font-size: 2em;
+  margin: 0 0 10px 0;
+}
+
+.form-header p {
+  color: #b0b0b0;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.player-edit-form {
+  background: linear-gradient(135deg, #393e46 0%, #2d3239 100%);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #00adb5;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #00adb5;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #2d3239;
+  border-radius: 8px;
+  background-color: #2d3239;
+  color: white;
+  font-size: 1em;
+  font-family: "Momo Trust Display", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #00adb5;
+  background-color: #222831;
+  box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #666;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300adb5' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.file-upload-group {
+  margin-bottom: 30px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-upload-wrapper input[type="file"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px dashed #00adb5;
+  border-radius: 8px;
+  background-color: #2d3239;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-wrapper input[type="file"]:hover {
+  background-color: #222831;
+  border-color: #00fff5;
+}
+
+.file-upload-wrapper input[type="file"]::file-selector-button {
+  padding: 8px 20px;
+  border: none;
+  background-color: #00adb5;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.file-upload-wrapper input[type="file"]::file-selector-button:hover {
+  background-color: #00fff5;
+}
+
+.form-hint {
+  display: block;
+  color: #888;
+  font-size: 0.85em;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #2d3239;
+}
+
+.btn-submit,
+.btn-cancel {
+  flex: 1;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: "Momo Trust Display", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #00adb5 0%, #008a94 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 173, 181, 0.5);
+  background: linear-gradient(135deg, #00fff5 0%, #00adb5 100%);
+}
+
+.btn-cancel {
+  background-color: #393e46;
+  color: #b0b0b0;
+  border: 2px solid #2d3239;
+}
+
+.btn-cancel:hover {
+  background-color: #2d3239;
+  color: white;
+  border-color: #00adb5;
+}
+
+
+

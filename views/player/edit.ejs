@@ -4,37 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>Edit Player</title>
+  <title>Edit Player - <%= player.name %></title>
 </head>
 <body>
   <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
-  <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=PUT" method="POST"             enctype="multipart/form-data"
->
+  
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Edit Player</h1>
+      <p>Update player information for <%= player.name %></p>
+    </div>
 
-    <label for="name">Name:</label>
-    <input type="text" name="name"id='name' value="<%= player.name %>">
+    <form 
+      class="player-edit-form" 
+      action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=PUT" 
+      method="POST" 
+      enctype="multipart/form-data"
+    >
 
-    <label for="nationality">Nationality:</label>
-    <input type="text" name="nationality"id='nationality' value="<%= player.nationality %>">
+      <div class="form-group">
+        <label for="name">Player Name</label>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          value="<%= player.name %>" 
+          placeholder="Enter player name"
+          required
+        >
+      </div>
 
-    <label for="position">Position:</label>
-    <select name="position" id="position">
-      <option value="Striker" <%= player.position == 'Striker'? 'selected' : ' '%> >Striker</option>
-      <option value="Midfielder" <%= player.position == 'Midfielder'? 'selected' : ' '%> >Midfielder</option>
-      <option value="Defender" <%= player.position == 'Defender'? 'selected' : ' '%> >Defender</option>
-      <option value="Goalkeeper" <%= player.position == 'Goalkeeper'? 'selected' : ' '%> >Goalkeeper</option>
-    </select>
+      <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <input 
+          type="text" 
+          name="nationality" 
+          id="nationality" 
+          value="<%= player.nationality %>" 
+          placeholder="Enter nationality"
+          required
+        >
+      </div>
 
-            <input type="file" name="image" id="image" />
+      <div class="form-row">
+        <div class="form-group">
+          <label for="position">Position</label>
+          <select name="position" id="position" required>
+            <option value="Striker" <%= player.position == 'Striker' ? 'selected' : '' %>>Striker</option>
+            <option value="Midfielder" <%= player.position == 'Midfielder' ? 'selected' : '' %>>Midfielder</option>
+            <option value="Defender" <%= player.position == 'Defender' ? 'selected' : '' %>>Defender</option>
+            <option value="Goalkeeper" <%= player.position == 'Goalkeeper' ? 'selected' : '' %>>Goalkeeper</option>
+          </select>
+        </div>
 
+        <div class="form-group">
+          <label for="rating">Rating (0-10)</label>
+          <input 
+            type="number" 
+            name="rating" 
+            id="rating" 
+            step="0.1" 
+            min="0" 
+            max="10" 
+            value="<%= player.rating %>"
+            placeholder="0.0"
+            required
+          >
+        </div>
+      </div>
 
+      <div class="form-group file-upload-group">
+        <label for="image">Profile Image</label>
+        <div class="file-upload-wrapper">
+          <input 
+            type="file" 
+            name="image" 
+            id="image" 
+          >
+        </div>
+      </div>
 
-    <label for="rating">Rating:</label>
-
-    <input type="number" name="rating"id='rating' step="0.1" min="0" max="10" value="<%= player.rating %>">
-
-    <input type="submit" value="Update">
-
-  </form>
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Update Player</button>
+        <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>" class="btn-cancel">Cancel</a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
