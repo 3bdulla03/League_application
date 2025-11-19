@@ -161,7 +161,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.edit-form-container-1{
+  margin-top: 50px;
+}
 .signup-form-container-2,
 .signin-form-container-2,
 .edit-form-container-2,
