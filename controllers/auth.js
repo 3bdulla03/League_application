@@ -21,7 +21,9 @@ exports.auth_signUp_post = async (req, res) => {
 
   const hashPassword = bcrypt.hashSync(req.body.password, 5)
   req.body.password = hashPassword
-  req.body.avatar = req.file.filename
+  if(req.file){
+    req.body.avatar = req.file.filename
+  }
   newUser = await User.create(req.body)
   res.render("mainPage.ejs")
 }

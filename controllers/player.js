@@ -22,7 +22,9 @@ exports.player_new_post = async (req, res) => {
   //create player functionality
   const team = await Team.findById(req.params.teamId)
   req.body.team = req.params.teamId //adding the team id to the player object
-  req.body.image = req.file.filename
+  if (req.file) {
+      req.body.image = req.file.filename;
+    }
 
   const newPlayer = await Player.create(req.body)
 
