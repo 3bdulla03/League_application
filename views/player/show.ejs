@@ -4,56 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= player.name %></title>
+    <title><%= player.name %> Profile</title>
   </head>
   <body>
-    <table class="simple-table">
-      <!--row 1-->
-      <tr>
-        <th class="team-name" colspan="4">
-          Team Name: <%= player.team ? player.team.name : "no team" %>
-        </th>
-      </tr>
-      <!--row 2-->
-      <tr>
-        <th>Profile</th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Position</th>
-        <th>Rating</th>
-      </tr>
-      <tr>
-        <td><img src="/upload/<%= player.image %>" width="20%" /></td>
-        <td><%= player.name %></td>
-        <td><%= player.nationality %></td>
-        <td><%= player.position %></td>
-        <td><%= player.rating %></td>
-      </tr>
-    </table>
-    <% if(league.manager._id.equals(user._id)) {%>
-    <form
-      action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/trade?_method=PUT"
-      method="POST"
-    >
-      <label for="trade_team">trade team</label>
-      <input type="text" name="trade_team" id="trade_team" required />
-      <button type="submit">Submit</button>
-    </form>
+    <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
+    
+    <div class="player-profile-container">
 
-    <a
-      href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/edit"
-      >Edit Player</a
-    >
+      <div class="player-card">
+        <div class="player-header">
+          <div class="player-image">
+            <img src="/upload/<%= player.image %>" alt="<%= player.name %>" />
+          </div>
+          <div class="player-main-info">
+            <h1><%= player.name %></h1>
+            <div class="player-team">
+              <span class="label">Team:</span>
+              <span class="value"><%= player.team ? player.team.name : "No Team" %></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="player-stats">
+          <div class="stat-item">
+            <span class="stat-label">Position</span>
+            <span class="stat-value"><%= player.position %></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Nationality</span>
+            <span class="stat-value"><%= player.nationality %></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Rating</span>
+            <span class="stat-value rating"><%= player.rating %></span>
+          </div>
+        </div>
+      </div>
 
-    <form
-      action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">Delete Player</button>
-    </form>
-    <% } else { %>
-    <br />
-    <h4>You have view-only access. <%= user.username %></h4>
-    <% } %>
+      <% if(league.manager._id.equals(user._id)) {%>
+        <div class="player-actions">
+
+          <div class="action-card">
+            <h3>Trade Player</h3>
+            <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/trade?_method=PUT" method="POST">
+              <label for="trade_team">Trade to Team:</label>
+              <input type="text" name="trade_team" id="trade_team" placeholder="Enter team name" required />
+              <button type="submit" class="btn-primary">Submit Trade</button>
+            </form>
+          </div>
+
+          <div class="action-buttons">
+            <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>/edit" class="btn-edit">
+              Edit Player
+            </a>
+            <form action="/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit" class="btn-delete">Delete Player</button>
+            </form>
+          </div>
+        </div>
+        
+      <% } %>
+    </div>
   </body>
 </html>
+
+
+
+
