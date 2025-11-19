@@ -4,59 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />    
-    <title>Team-details</title>
+    <title><%=team.name%></title>
   </head>
   <body>
-    <%- include("../partials/_nav.ejs") %>
-    <h1>Details</h1>
-    <br />
-
-    <h2>Team :</h2>
-    <h3><%=team.name%></h3>
-
-    <h2>Coach :</h2>
-    <h3><%= team.coach %></h3>
-    <br /><br />
-
-
-
-    <table class="simple-table">
-      <!--row 1-->
-      <tr>
-        <th class="team-name" colspan="6">Players</th>
-      </tr>
-      <!--row 2-->
-      <tr>
-        <th>Number</th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Position</th>
-        <th>Rating</th>
-      </tr>
-      <% team.players.forEach((player, index) => { %>
-      <tr
-        onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id%>'"
-      >
-        <td><%= index %></td>
-        <td><%= player.name %></td>
-        <td><%= player.nationality %></td>
-        <td><%= player.position %></td>
-        <td><%= player.rating %></td>
-      </tr>
-      <% }) %>
-    </table>
-
-    <br>
-    <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/new">Add a Player here</a>
+    <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
     
-    <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/edit"
-      ><button>edit</button></a
-    >
-    <form
-      action="/leagues/<%= league._id %>/teams/<%= team._id %>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">delete</button>
-    </form>
+    <div class="team-details-container">
+      <div class="team-header">
+        <div class="team-info">
+          <h1><%=team.name%></h1>
+          <div class="coach-info">
+            <span class="label">Coach:</span>
+            <span class="value"><%= team.coach %></span>
+          </div>
+        </div>     
+        
+        <div class="team-actions">
+          <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/edit"
+          ><button>edit</button></a
+          >
+          <form
+            action="/leagues/<%= league._id %>/teams/<%= team._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" class="delete">delete</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="players-section">
+        <h2>Team Details</h2>
+
+        <table class="simple-table">
+          <!--row 1-->
+          <tr>
+            <th class="team-name" colspan="6">Players</th>
+          </tr>
+          <!--row 2-->
+          <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Position</th>
+            <th>Rating</th>
+          </tr>
+          <% team.players.forEach((player, index) => { %>
+          <tr class="player-row"
+            onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id%>'"
+          >
+            <td><%= index + 1 %></td>
+            <td class="player-name"><%= player.name %></td>
+            <td><%= player.nationality %></td>
+            <td><%= player.position %></td>
+            <td class="rating"><%= player.rating %></td>
+          </tr>
+          <% }) %>
+        </table>
+
+        <div class="add-player-section">
+          <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/new" class="btn-add-player">Add new Player</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
