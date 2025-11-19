@@ -8,15 +8,25 @@
   </head>
   <body>
     <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
-    <br><h1><%= league.league %> has these teams:</h1>
-    <section class="buttons-show">  
-      <div class="b-1"><a href="/leagues/<%= league._id %>/teams/new">Add new Team</a></div>
+    <br />
+    <h1><%= league.league %> has these teams:</h1>
+    <% if(league.manager._id.equals(user._id)) {%>
+    <section class="buttons-show">
+      <div class="b-1">
+        <a href="/leagues/<%= league._id %>/teams/new">Add new Team</a>
+      </div>
       <div class="b-2"><a href="/leagues/<%= league._id %>/edit">Edit</a></div>
-      <div class="b-3"><form action="/leagues/<%= league._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="delete">Delete League</button>
-      </form></div>
+      <div class="b-3">
+        <form action="/leagues/<%= league._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="delete">Delete League</button>
+        </form>
+      </div>
     </section>
-    
+    <% } else { %>
+    <br />
+    <h4>You have view-only access. <%= user.username %></h4>
+    <% } %>
+
     <table class="simple-table">
       <!--row 1-->
       <tr>
@@ -38,7 +48,6 @@
       </tr>
       <% }) %>
     </table>
-    <% if(league.manager._id.equals(user._id)) {%>
-    <% } %>
+    <% if(league.manager._id.equals(user._id)) {%> <% } %>
   </body>
 </html>

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />    
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%=team.name%></title>
   </head>
   <body>
     <div class="header-bar"><%- include('../partials/_nav.ejs') %></div>
-    
+
     <div class="team-details-container">
       <div class="team-header">
         <div class="team-info">
@@ -17,11 +17,13 @@
             <span class="label">Coach:</span>
             <span class="value"><%= team.coach %></span>
           </div>
-        </div>     
-        
+        </div>
+
         <div class="team-actions">
+          <% if(league.manager._id.equals(user._id)) {%>
+
           <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/edit"
-          ><button>edit</button></a
+            ><button>edit</button></a
           >
           <form
             action="/leagues/<%= league._id %>/teams/<%= team._id %>?_method=DELETE"
@@ -29,6 +31,7 @@
           >
             <button type="submit" class="delete">delete</button>
           </form>
+          <% } %>
         </div>
       </div>
 
@@ -49,7 +52,8 @@
             <th>Rating</th>
           </tr>
           <% team.players.forEach((player, index) => { %>
-          <tr class="player-row"
+          <tr
+            class="player-row"
             onclick="window.location='/leagues/<%= league._id %>/teams/<%= team._id %>/players/<%= player._id%>'"
           >
             <td><%= index + 1 %></td>
@@ -60,9 +64,18 @@
           </tr>
           <% }) %>
         </table>
+        <% if(league.manager._id.equals(user._id)) {%>
 
         <div class="add-player-section">
-          <a href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/new" class="btn-add-player">Add new Player</a>
+          <a
+            href="/leagues/<%= league._id %>/teams/<%= team._id %>/players/new"
+            class="btn-add-player"
+            >Add new Player</a
+          >
+          <% } else { %>
+          <br />
+          <h4>You have view-only access. <%= user.username %></h4>
+          <% } %>
         </div>
       </div>
     </div>
