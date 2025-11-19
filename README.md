@@ -16,6 +16,7 @@
 ## Unsolved Problems
 1. edit user (every field should have a new value)
 2. The user could choose the team to trade a player from a list of existing teams
+3. The user have to upload photo to sign up or to add new player
 
 ## Future enhancements
 1. Making two different leagues have the same team (like continental competition)
