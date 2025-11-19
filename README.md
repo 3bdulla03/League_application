@@ -1,4 +1,4 @@
-# League_application
+<img width="1710" height="938" alt="image" src="https://github.com/user-attachments/assets/f35a7574-8155-430a-a44f-9987ac1bdb8e" /># League_application
 
 ## Project planning
 [Go to Trello](https://trello.com/invite/b/690a3404820414e246ea47ba/ATTI793cfc5d2edd659cc71f3a61ef17249311F3422D/my-trello-board)
@@ -13,15 +13,17 @@
 [Go to ERD File](https://lucid.app/lucidchart/0294e701-4cf7-4dc2-85d6-691bfcd1967e/edit?invitationId=inv_c71f7d9e-41ad-4af5-b66b-ceb749e73de6&referringApp=slack&page=0_0#)
 
 
-### Function
+## Unsolved Problems
+1. edit user (every field should have a new value)
+2. The user could choose the team to trade a player from a list of existing teams
 
-The league app helps managers seamlessly *organize* and *oversee* their leagues. **Managers** can add and update *league* details, including *teams* and *players*, while other managers have *view-only* access, ensuring that only the ***league Manager*** can make *changes*.
+## Future enhancements
+1. Making two different leagues have the same team (like continental competition)
+2. Making a league standings
 
-![Manger](https://media1.tenor.com/m/zWnTBUB0_kUAAAAC/michael-scott-the-manager.gif)
 
 
-### Specialty
+##App overview
+![landing page](./public/appOverview/Screenshot 2025-11-19 at 5.14.20 PM.png)
 
-A **key feature** of the app is its simple ***player-trading system***, allowing coaches to trade players easily — but all trades must be authorized by the league *Manager*.
 
-![Approval](https://media1.tenor.com/m/lrJbQSRuZygAAAAC/youre-approved-shirley-auto-group.gif)
